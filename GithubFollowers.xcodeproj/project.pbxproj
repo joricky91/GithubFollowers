@@ -22,6 +22,8 @@
 		51635AC82C19588800956E42 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51635AC72C19588800956E42 /* UIViewController+Ext.swift */; };
 		51635AD32C19793F00956E42 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51635AD22C19793E00956E42 /* Follower.swift */; };
 		51635AD52C197A0500956E42 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51635AD42C197A0500956E42 /* User.swift */; };
+		51635AD82C19860A00956E42 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51635AD72C19860A00956E42 /* NetworkManager.swift */; };
+		51635ADB2C1994D200956E42 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51635ADA2C1994D200956E42 /* ErrorMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		51635AC72C19588800956E42 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		51635AD22C19793E00956E42 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		51635AD42C197A0500956E42 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		51635AD72C19860A00956E42 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		51635ADA2C1994D200956E42 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +78,9 @@
 		51635A9E2C16D2C500956E42 /* GithubFollowers */ = {
 			isa = PBXGroup;
 			children = (
+				51635AD92C1994C100956E42 /* Utilities */,
 				51635AAD2C16D2C800956E42 /* Info.plist */,
+				51635AD62C1985F600956E42 /* Managers */,
 				51635AD12C19793000956E42 /* Model */,
 				51635AD02C19604200956E42 /* Support */,
 				51635ACD2C195FE600956E42 /* Extensions */,
@@ -166,6 +172,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		51635AD62C1985F600956E42 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				51635AD72C19860A00956E42 /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		51635AD92C1994C100956E42 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				51635ADA2C1994D200956E42 /* ErrorMessage.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -243,9 +265,11 @@
 				51635AC82C19588800956E42 /* UIViewController+Ext.swift in Sources */,
 				51635AB82C16E7CE00956E42 /* GFButton.swift in Sources */,
 				51635ABC2C16FD4E00956E42 /* FollowerListViewController.swift in Sources */,
+				51635ADB2C1994D200956E42 /* ErrorMessage.swift in Sources */,
 				51635AC22C1706DB00956E42 /* GFBodyLabel.swift in Sources */,
 				51635AD32C19793F00956E42 /* Follower.swift in Sources */,
 				51635AC02C1705A200956E42 /* GFTitleLabel.swift in Sources */,
+				51635AD82C19860A00956E42 /* NetworkManager.swift in Sources */,
 				51635AA02C16D2C500956E42 /* AppDelegate.swift in Sources */,
 				51635AB62C16DFDB00956E42 /* FavoriteViewController.swift in Sources */,
 				51635AA22C16D2C500956E42 /* SceneDelegate.swift in Sources */,
