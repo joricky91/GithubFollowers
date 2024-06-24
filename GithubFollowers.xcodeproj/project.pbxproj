@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5136CBF12C255DF3008A054A /* GFEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5136CBF02C255DF3008A054A /* GFEmptyStateView.swift */; };
+		5136CBF32C257549008A054A /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5136CBF22C257549008A054A /* UserInfoViewController.swift */; };
 		51635AA02C16D2C500956E42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51635A9F2C16D2C500956E42 /* AppDelegate.swift */; };
 		51635AA22C16D2C500956E42 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51635AA12C16D2C500956E42 /* SceneDelegate.swift */; };
 		51635AA92C16D2C800956E42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51635AA82C16D2C800956E42 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		5136CBF02C255DF3008A054A /* GFEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFEmptyStateView.swift; sourceTree = "<group>"; };
+		5136CBF22C257549008A054A /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		51635A9C2C16D2C500956E42 /* GithubFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51635A9F2C16D2C500956E42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51635AA12C16D2C500956E42 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				51635AB32C16DFBA00956E42 /* SearchViewController.swift */,
 				51635AB52C16DFDB00956E42 /* FavoriteViewController.swift */,
 				51635ABB2C16FD4E00956E42 /* FollowerListViewController.swift */,
+				5136CBF22C257549008A054A /* UserInfoViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				5136CBF12C255DF3008A054A /* GFEmptyStateView.swift in Sources */,
 				51635AD82C19860A00956E42 /* NetworkManager.swift in Sources */,
 				51635AA02C16D2C500956E42 /* AppDelegate.swift in Sources */,
+				5136CBF32C257549008A054A /* UserInfoViewController.swift in Sources */,
 				51635AB62C16DFDB00956E42 /* FavoriteViewController.swift in Sources */,
 				51635AA22C16D2C500956E42 /* SceneDelegate.swift in Sources */,
 			);
