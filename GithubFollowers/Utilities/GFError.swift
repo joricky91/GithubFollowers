@@ -1,8 +1,8 @@
 //
-//  ErrorMessage.swift
+//  GFError.swift
 //  GithubFollowers
 //
-//  Created by Jonathan Ricky Sandjaja on 12/06/24.
+//  Created by Jonathan Ricky Sandjaja on 25/06/24.
 //
 
 import Foundation
