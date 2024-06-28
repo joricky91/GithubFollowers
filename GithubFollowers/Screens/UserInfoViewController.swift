@@ -38,6 +38,8 @@ class UserInfoViewController: UIViewController {
             case .success(let user):
                 DispatchQueue.main.async {
                     self.add(child: GFUserInfoHeaderViewController(user: user), to: self.headerView)
+                    self.add(child: GFRepoItemVC(user: user), to: self.itemViewOne)
+                    self.add(child: GFFollowerItemVC(user: user), to: self.itemViewTwo)
                 }
             case .failure(let error):
                 self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
@@ -59,9 +61,6 @@ class UserInfoViewController: UIViewController {
                 item.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
             ])
         }
-        
-        itemViewOne.backgroundColor = .systemMint
-        itemViewTwo.backgroundColor = .systemCyan
         
         NSLayoutConstraint.activate([
             headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
