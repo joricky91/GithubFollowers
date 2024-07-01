@@ -13,6 +13,15 @@ class FavoriteViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .systemTeal
+        
+        PersistenceManager.retrieveFavorites { result in
+            switch result {
+            case .success(let favorites):
+                print(favorites)
+            case .failure(let failure):
+                break
+            }
+        }
     }
 
 }
