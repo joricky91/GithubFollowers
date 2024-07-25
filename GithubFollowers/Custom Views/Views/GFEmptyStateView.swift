@@ -22,11 +22,10 @@ class GFEmptyStateView: UIView {
         super.init(coder: coder)
     }
     
-    init(message: String) {
-        super.init(frame: .zero)
+    convenience init(message: String) {
+        self.init(frame: .zero)
         
         messageLabel.text = message
-        configure()
     }
     
     private func configure() {
