@@ -41,6 +41,7 @@
 		51635ADE2C199EA600956E42 /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51635ADD2C199EA600956E42 /* FollowerCell.swift */; };
 		51635AE02C199F1D00956E42 /* GFAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51635ADF2C199F1D00956E42 /* GFAvatarImageView.swift */; };
 		51635AE22C1AF4E500956E42 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51635AE12C1AF4E500956E42 /* UIHelper.swift */; };
+		51B63ADD2C52429A001500D9 /* GFAlertContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B63ADC2C52429A001500D9 /* GFAlertContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		51635ADD2C199EA600956E42 /* FollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
 		51635ADF2C199F1D00956E42 /* GFAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAvatarImageView.swift; sourceTree = "<group>"; };
 		51635AE12C1AF4E500956E42 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		51B63ADC2C52429A001500D9 /* GFAlertContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAlertContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			children = (
 				5136CBF02C255DF3008A054A /* GFEmptyStateView.swift */,
 				5136CBFC2C2AC94D008A054A /* GFItemInfoView.swift */,
+				51B63ADC2C52429A001500D9 /* GFAlertContainerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				5136CBF52C2AA7B1008A054A /* GFError.swift in Sources */,
 				51635AD32C19793F00956E42 /* Follower.swift in Sources */,
 				5136CC082C2E6F8D008A054A /* String + Ext.swift in Sources */,
+				51B63ADD2C52429A001500D9 /* GFAlertContainerView.swift in Sources */,
 				51635AC02C1705A200956E42 /* GFTitleLabel.swift in Sources */,
 				5136CBF92C2AAE70008A054A /* GFSecondaryTitleLabel.swift in Sources */,
 				5136CC0A2C328C8B008A054A /* PersistenceManager.swift in Sources */,
