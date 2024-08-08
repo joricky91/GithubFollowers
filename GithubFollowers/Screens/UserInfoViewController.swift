@@ -8,8 +8,7 @@
 import UIKit
 
 protocol UserInfoViewControllerDelegate: AnyObject {
-    func didTapGithubProfile(for user: User)
-    func didTapGetFollowers(for user: User)
+    func didRequestFollowers(for username: String)
 }
 
 class UserInfoViewController: GFDataLoadingViewController {
@@ -21,7 +20,7 @@ class UserInfoViewController: GFDataLoadingViewController {
     var itemViews: [UIView] = []
     
     var username: String = ""
-    weak var delegate: FollowerListViewControllerDelegate!
+    weak var delegate: UserInfoViewControllerDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,14 +51,8 @@ class UserInfoViewController: GFDataLoadingViewController {
     }
     
     func configureUIElements(with user: User) {
-        let repoItemVC = GFRepoItemVC(user: user)
-        repoItemVC.delegate = self
-        
-        let followerItemVC = GFFollowerItemVC(user: user)
-        followerItemVC.delegate = self
-        
-        self.add(child: repoItemVC, to: self.itemViewOne)
-        self.add(child: followerItemVC, to: self.itemViewTwo)
+        self.add(child: GFRepoItemVC(user: user, delegate: self), to: self.itemViewOne)
+        self.add(child: GFFollowerItemVC(user: user, delegate: self), to: self.itemViewTwo)
         self.add(child: GFUserInfoHeaderViewController(user: user), to: self.headerView)
         self.dateLabel.text = "Github since \(user.createdAt.convertToMonthYearFormat())"
     }
@@ -107,16 +100,7 @@ class UserInfoViewController: GFDataLoadingViewController {
 
 }
 
-extension UserInfoViewController: UserInfoViewControllerDelegate {
-    
-    func didTapGithubProfile(for user: User) {
-        guard let url = URL(string: user.htmlUrl) else {
-            presentGFAlertOnMainThread(title: "Invalid URL", message: "The url attached to this user is invalid.", buttonTitle: "Ok")
-            return
-        }
-        
-        presentSafariViewController(with: url)
-    }
+extension UserInfoViewController: GFRepoItemViewControllerDelegate {
     
     func didTapGetFollowers(for user: User) {
         guard user.followers != 0 else {
@@ -126,6 +110,19 @@ extension UserInfoViewController: UserInfoViewControllerDelegate {
         
         delegate.didRequestFollowers(for: user.login)
         dismissVC()
+    }
+    
+}
+
+extension UserInfoViewController: GFFollowerItemViewControllerDelegate {
+    
+    func didTapGithubProfile(for user: User) {
+        guard let url = URL(string: user.htmlUrl) else {
+            presentGFAlertOnMainThread(title: "Invalid URL", message: "The url attached to this user is invalid.", buttonTitle: "Ok")
+            return
+        }
+        
+        presentSafariViewController(with: url)
     }
     
 }
