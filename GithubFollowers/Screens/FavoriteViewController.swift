@@ -9,7 +9,7 @@ import UIKit
 
 class FavoriteViewController: GFDataLoadingViewController {
     
-    let tableView = UITableView()
+    let tableView             = UITableView()
     var favorites: [Follower] = []
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,16 +27,16 @@ class FavoriteViewController: GFDataLoadingViewController {
     
     func configureViewController() {
         view.backgroundColor = .systemBackground
-        title = "Favorites"
+        title                = "Favorites"
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     func configureTableView() {
         view.addSubview(tableView)
-        tableView.frame = view.bounds
-        tableView.rowHeight = 80
-        tableView.delegate = self
-        tableView.dataSource = self
+        tableView.frame         = view.bounds
+        tableView.rowHeight     = 80
+        tableView.delegate      = self
+        tableView.dataSource    = self
         tableView.removeExcessCells()
         tableView.register(FavoriteTableViewCell.self, forCellReuseIdentifier: FavoriteTableViewCell.reuseID)
     }
@@ -47,17 +47,21 @@ class FavoriteViewController: GFDataLoadingViewController {
             
             switch result {
             case .success(let favorites):
-                if favorites.isEmpty {
-                    self.showEmptyStateView(with: "No Favorites?\nAdd one on the follower screen", in: self.view)
-                } else {
-                    self.favorites = favorites
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                        self.view.bringSubviewToFront(self.tableView)
-                    }
-                }
+                self.updateUI(with: favorites)
             case .failure(let error):
                 self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+            }
+        }
+    }
+    
+    func updateUI(with favorites: [Follower]) {
+        if favorites.isEmpty {
+            self.showEmptyStateView(with: "No Favorites?\nAdd one on the follower screen", in: self.view)
+        } else {
+            self.favorites = favorites
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.view.bringSubviewToFront(self.tableView)
             }
         }
     }
@@ -71,8 +75,8 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: FavoriteTableViewCell.reuseID) as! FavoriteTableViewCell
-        let favorite = favorites[indexPath.row]
+        let cell        = tableView.dequeueReusableCell(withIdentifier: FavoriteTableViewCell.reuseID) as! FavoriteTableViewCell
+        let favorite    = favorites[indexPath.row]
         cell.set(favorite: favorite)
         
         return cell
@@ -80,7 +84,7 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let favorite = favorites[indexPath.row]
-        let destVC = FollowerListViewController(username: favorite.login)
+        let destVC   = FollowerListViewController(username: favorite.login)
         
         navigationController?.pushViewController(destVC, animated: true)
     }

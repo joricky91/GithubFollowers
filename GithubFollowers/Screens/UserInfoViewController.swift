@@ -13,13 +13,14 @@ protocol UserInfoViewControllerDelegate: AnyObject {
 
 class UserInfoViewController: GFDataLoadingViewController {
     
-    let scrollView = UIScrollView()
+    let scrollView  = UIScrollView()
     let contentView = UIView()
     
-    let headerView = UIView()
+    let headerView  = UIView()
     let itemViewOne = UIView()
     let itemViewTwo = UIView()
-    let dateLabel = GFBodyLabel(textAlignment: .center)
+    let dateLabel   = GFBodyLabel(textAlignment: .center)
+    
     var itemViews: [UIView] = []
     
     var username: String = ""

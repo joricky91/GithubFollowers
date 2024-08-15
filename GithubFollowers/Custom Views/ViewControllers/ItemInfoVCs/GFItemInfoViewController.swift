@@ -43,11 +43,11 @@ class GFItemInfoViewController: UIViewController {
     
     private func configureBackgroundView() {
         view.layer.cornerRadius = 18
-        view.backgroundColor = .secondarySystemBackground
+        view.backgroundColor    = .secondarySystemBackground
     }
     
     private func configureStackView() {
-        stackView.axis = .horizontal
+        stackView.axis         = .horizontal
         stackView.distribution = .equalSpacing
         
         stackView.addArrangedSubview(itemInfoViewOne)

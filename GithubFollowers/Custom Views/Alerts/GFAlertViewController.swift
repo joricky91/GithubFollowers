@@ -23,9 +23,9 @@ class GFAlertViewController: UIViewController {
     init(alertTitle: String, message: String, buttonTitle: String) {
         super.init(nibName: nil, bundle: nil)
         
-        self.alertTitle = alertTitle
-        self.message = message
-        self.buttonTitle = buttonTitle
+        self.alertTitle     = alertTitle
+        self.message        = message
+        self.buttonTitle    = buttonTitle
     }
     
     required init?(coder: NSCoder) {
