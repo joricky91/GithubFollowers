@@ -45,6 +45,7 @@
 		517BC6542C5B3A0E00EE67BE /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517BC6532C5B3A0E00EE67BE /* UIView+Ext.swift */; };
 		51B63ADD2C52429A001500D9 /* GFAlertContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B63ADC2C52429A001500D9 /* GFAlertContainerView.swift */; };
 		51B63ADF2C5255B1001500D9 /* GFDataLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B63ADE2C5255B1001500D9 /* GFDataLoadingViewController.swift */; };
+		51FCA1572C749B40001A1EC2 /* FollowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FCA1562C749B40001A1EC2 /* FollowerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		517BC6532C5B3A0E00EE67BE /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		51B63ADC2C52429A001500D9 /* GFAlertContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAlertContainerView.swift; sourceTree = "<group>"; };
 		51B63ADE2C5255B1001500D9 /* GFDataLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFDataLoadingViewController.swift; sourceTree = "<group>"; };
+		51FCA1562C749B40001A1EC2 /* FollowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,10 +295,19 @@
 		51635ADC2C199E8600956E42 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				51635ADD2C199EA600956E42 /* FollowerCell.swift */,
+				51FCA1552C749B31001A1EC2 /* FollowerCell */,
 				5136CC0B2C32A3D5008A054A /* FavoriteTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		51FCA1552C749B31001A1EC2 /* FollowerCell */ = {
+			isa = PBXGroup;
+			children = (
+				51635ADD2C199EA600956E42 /* FollowerCell.swift */,
+				51FCA1562C749B40001A1EC2 /* FollowerView.swift */,
+			);
+			path = FollowerCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51FCA1572C749B40001A1EC2 /* FollowerView.swift in Sources */,
 				51635AD52C197A0500956E42 /* User.swift in Sources */,
 				51635AC42C17079700956E42 /* GFAlertViewController.swift in Sources */,
 				51635ABA2C16E96D00956E42 /* GFTextField.swift in Sources */,
