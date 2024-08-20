@@ -17,6 +17,19 @@ class FavoriteViewController: GFDataLoadingViewController {
         
         getFavorites()
     }
+    
+    override func updateContentUnavailableConfiguration(using state: UIContentUnavailableConfigurationState) {
+        if favorites.isEmpty {
+            var config = UIContentUnavailableConfiguration.empty()
+            config.image = .init(systemName: "star")
+            config.text = "No Favorites"
+            config.secondaryText = "Add a favorite on the follower list screen"
+            
+            contentUnavailableConfiguration = config
+        } else {
+            contentUnavailableConfiguration = nil
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,15 +70,17 @@ class FavoriteViewController: GFDataLoadingViewController {
     }
     
     func updateUI(with favorites: [Follower]) {
-        if favorites.isEmpty {
-            self.showEmptyStateView(with: "No Favorites?\nAdd one on the follower screen", in: self.view)
-        } else {
+//        if favorites.isEmpty {
+//            self.showEmptyStateView(with: "No Favorites?\nAdd one on the follower screen", in: self.view)
+            
+//        } else {
             self.favorites = favorites
+            setNeedsUpdateContentUnavailableConfiguration()
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 self.view.bringSubviewToFront(self.tableView)
             }
-        }
+//        }
     }
 
 }
@@ -99,11 +114,7 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
             guard let error else {
                 self.favorites.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .left)
-                
-                if self.favorites.isEmpty {
-                    self.showEmptyStateView(with: "No Favorites?\nAdd one on the follower screen", in: self.view)
-                }
-                
+                setNeedsUpdateContentUnavailableConfiguration()
                 return
             }
             
